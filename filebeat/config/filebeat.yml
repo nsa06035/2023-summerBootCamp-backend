@@ -1,0 +1,13 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/*.log
+      - /usr/src/app/logs/*.log # 추가
+output.logstash:
+  enabled: true
+  hosts: ["logstash:5044"]
+setup.kibana:
+  host: "http://kibana:5601"
+  username: "elastic"
+  password: "changeme"

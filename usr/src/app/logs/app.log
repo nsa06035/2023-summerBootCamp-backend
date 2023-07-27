@@ -1,0 +1,11 @@
+const winston = require('winston');
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [
+        new winston.transports.File({ filename: '/usr/src/app/logs/app.log' }),
+        new winston.transports.Console()
+    ],
+});
+// 이제 logger를 사용하여 로그를 작성합니다:
+logger.info('Hello, Winston!');
